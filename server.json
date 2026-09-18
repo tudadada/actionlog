@@ -1,0 +1,53 @@
+{
+  "$schema": "https://glama.ai/mcp/schemas/server.json",
+  "name": "actionlog",
+  "description": "Tamper-Evident Autonomous Agent Action Audit & Governance Logging MCP Server",
+  "tools": [
+    {
+      "name": "record_agent_action",
+      "description": "Records an autonomous agent decision or tool execution with cryptographic integrity hash.",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "agent_id": {
+            "type": "string",
+            "description": "Unique identifier of the executing agent"
+          },
+          "action_type": {
+            "type": "string",
+            "description": "Action category (e.g., tool_call, transaction, file_write, api_dispatch)"
+          },
+          "payload": {
+            "type": "string",
+            "description": "JSON string containing execution parameters or outcome"
+          }
+        },
+        "required": [
+          "agent_id",
+          "action_type",
+          "payload"
+        ]
+      }
+    },
+    {
+      "name": "verify_log_integrity",
+      "description": "Audits sequential cryptographic checksums to ensure audit log has not been altered.",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "agent_id": {
+            "type": "string",
+            "description": "Agent ID whose action log history will be verified"
+          },
+          "audit_depth": {
+            "type": "number",
+            "description": "Number of recent log events to verify (default 50)"
+          }
+        },
+        "required": [
+          "agent_id"
+        ]
+      }
+    }
+  ]
+}

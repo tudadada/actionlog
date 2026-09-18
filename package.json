@@ -1,0 +1,32 @@
+{
+  "name": "actionlog",
+  "version": "1.0.0",
+  "description": "Tamper-Evident Autonomous Agent Action Audit & Governance Logging MCP Server",
+  "type": "module",
+  "main": "index.js",
+  "bin": {
+    "actionlog": "./index.js"
+  },
+  "scripts": {
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tudadada/actionlog.git"
+  },
+  "keywords": [
+    "mcp",
+    "model-context-protocol",
+    "actionlog",
+    "audit-log",
+    "ai-agent",
+    "governance",
+    "compliance",
+    "tamper-evident"
+  ],
+  "author": "tudadada",
+  "license": "MIT",
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.0.1"
+  }
+}
